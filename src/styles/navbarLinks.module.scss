@@ -1,0 +1,78 @@
+@import './variables';
+@import "./mixins";
+
+.container {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  height: 55px;
+  background: $primary-gradient-linear;
+  margin: 0 auto;
+  box-shadow: $card-box-shadow;
+  border-radius: 30px;
+  width: calc(100% - 50px);
+  
+  
+
+  @media only screen and (max-width: 599px) {
+    display: none;
+  }
+}
+
+.navContainer {
+  max-width: 1200px;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  .link {
+    position: relative;
+    color: $secondary;
+  }
+
+  [data-active="true"] {
+    border-bottom: 2px solid;
+  }
+
+}
+
+.cartLink {
+  position: relative;
+  color: $secondary;
+  padding: 5px;
+}
+
+.cartNumber {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -15px;
+  left: 15px;
+  background-color: $accent;
+  color: $primary-light;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.login {
+  display: flex;
+  // align-items: center;
+  color: $secondary;
+  gap: 0.5rem;
+
+  .loginBTN {
+    &:hover {
+      background-color: $accent !important;
+      color: $primary-light;
+    }
+  }
+}

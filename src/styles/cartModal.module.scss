@@ -1,0 +1,168 @@
+@import "./variables";
+@import "./mixins";
+
+.container {
+  position: absolute;
+  width: 400px;
+  cursor: default;
+  padding: 1rem 0 1rem 1rem;
+  background-color: #fff;
+  box-shadow: $card-box-shadow;
+  border-radius: 30px;
+  z-index: 1;
+  
+  @media only screen and (max-width: 1600px) {
+    right: -250px;
+  }
+  @media only screen and (max-width: 1368px) {
+    right: 0px;
+  }
+
+  .empty_svg {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .empty_title {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    padding: 10px 0;
+  }
+
+  .empty_text {
+    text-align: center;
+    padding: 0 1rem;
+    font-size: 12px;
+    color: #666;
+
+    span {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .cart {
+    padding-right: 0.5rem;
+    max-height: 70vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+    .item {
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid $secondary;
+
+      .image {
+        width: 100%;
+        max-width: 150px;
+      }
+
+      .details {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          font-size: 16px;
+          margin: 2px;
+        }
+
+        .size {
+          font-size: 14px;
+          color: #666;
+          margin: 0;
+        }
+
+        .price {
+          font-size: 14px;
+          color: black;
+          font-weight: 600;
+        }
+
+        .qty_total {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .delete {
+            width: 20px;
+            cursor: pointer;
+          }
+        }
+
+        .qty {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgb(201, 201, 201);
+          border-top-left-radius: 25px;
+          border-bottom-left-radius: 25px;
+          border-radius: 25px;
+          width: 75px;
+          .qtyNumber {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 27px;
+            width: 27px;
+            outline: #fff;
+          }
+
+          .remove {
+            cursor: pointer;
+            // border-right: 1px solid rgb(201, 201, 201);
+            padding-right: 5px;
+            padding-left: 5px;
+           font-weight: 600;
+          }
+          .add {
+            // border-left: 1px solid rgb(201, 201, 201);
+            cursor: pointer;
+            padding-left: 5px;
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .free_shipping {
+    background-color: $body;
+    color: $primary;
+
+    font-weight: 600;
+    text-align: center;
+    padding: 5px 0;
+    margin-right: 15px;
+  }
+
+  .totalSum {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 15px;
+
+    .tva {
+      color: $gray-dark;
+    }
+
+    .totalPrice {
+      font-weight: 700;
+      color: $primary-light;
+    }
+  }
+
+  .addCart {
+    // @include pink-btn;
+    width: 96%;
+  }
+
+  .buyNow {
+    width: 96%;
+    margin: 1rem 0;
+    background-color: $contrast;
+    color: white;
+  }
+}

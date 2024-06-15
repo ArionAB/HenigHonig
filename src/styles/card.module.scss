@@ -1,0 +1,145 @@
+@import "./variables";
+@import "./mixins";
+
+.container {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  background-color: white;
+  box-shadow: $card-box-shadow;
+  min-height: 400px;
+  max-height: 468px;
+  width: 330px;
+  max-width: 330px;
+  min-width: 300px;
+  padding-top: 2rem;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+
+  @media only screen and (max-width: 900px) {
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    img {
+      height: 200px;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding-top: 1rem;
+    min-height: 380px;
+  max-height: 374px;
+  width: 264px;
+  max-width: 264px;
+  min-width: 240px;
+  }
+
+  .ribbon {
+    --f: 10px; /* control the folded part*/
+    --r: 15px; /* control the ribbon shape */
+    --t: 10px; /* the top offset */
+    z-index:1;
+    position: absolute;
+    inset: var(--t) calc(-1 * var(--f)) auto auto;
+    padding: 0 10px var(--f) calc(10px + var(--r));
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - var(--f)),
+      calc(100% - var(--f)) 100%,
+      calc(100% - var(--f)) calc(100% - var(--f)),
+      0 calc(100% - var(--f)),
+      var(--r) calc(50% - var(--f) / 2)
+    );
+    background: #bd1550;
+    box-shadow: 0 calc(-1 * var(--f)) 0 inset #0005;
+    color: white;
+  }
+
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 30px;
+    color: $primary;
+    width: 80%;
+    margin: 0 auto;
+    border-top: 2px solid #f3b300;
+
+    span {
+      font-size: 20px;
+      font-weight: 600;
+      color: #f3b300;
+    }
+  }
+
+  .title {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: $primary;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+
+  .bottom {
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+    position: absolute;
+    bottom: -40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: $card-box-shadow;
+
+    @media only screen and (max-width: 900px) {
+      bottom: -10px;
+    }
+  }
+  @keyframes opacityDelay {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .twoButtons {
+    animation: opacityDelay 0.5s;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+
+    .shop {
+      background-color: $contrast;
+      color: white;
+      text-transform: capitalize;
+      width: 40%;
+      border-radius: 15px;
+      height: 40px;
+    }
+
+    .options {
+      background-color: $accent;
+      color: $primary;
+      text-transform: capitalize;
+      border-radius: 15px;
+      width: 50%;
+      height: 40px;
+    }
+  }
+
+
+}
+

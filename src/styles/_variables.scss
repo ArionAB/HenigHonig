@@ -1,0 +1,54 @@
+$primary: rgb(61, 40, 45);
+$primary-light: #b06f2a;
+$primary-gradient-linear: linear-gradient(
+ 90deg,
+ rgba(61, 40, 45, 1) 0%,
+ rgba(47, 31, 34, 1) 47%,
+ rgba(35, 25, 26, 1) 100%
+);
+
+$secondary: rgba(248, 201, 125, 1);
+$secondary-gradient-linear: linear-gradient(
+ 90deg,
+ rgba(243, 220, 178, 1) 0%,
+ rgba(247, 217, 166, 1) 47%,
+ rgba(248, 201, 125, 1) 100%
+);
+
+
+
+$accent: #e0cece;
+$contrast: #344660;
+
+$body: #fcfaf2;
+$body-light: #fcfaf9;
+
+$pending: #356aee;
+$shipped: #f7b500;
+$delivered: #35a15b;
+$cancelled: #f44336;
+
+$error: #d32f2f;
+
+
+$big-font: clamp(16px, 2vw, 24px);
+
+$gray-light: #e3e3e3;
+$gray: #4c5154;
+$gray-dark: #2226;
+$gray-label: #b1b0b5;
+
+$disabled-color: rgba(0, 0, 0, 0.26);
+$disabled-box-shadow: none;
+$disabled-bg-color: rgba(0, 0, 0, 0.12);
+
+$card-box-shadow: 5px 10px 10px #0000000d, 0 21.7776px 24.4221px #00000009;
+
+$h2-font: clamp(1.25rem,1.0833rem + .7407vw,1.75rem);
+$h4-font: clamp(1.5rem,1.3333rem + .7407vw,2rem);
+$p-font:  clamp(.875rem,.7917rem + .3704vw,1.125rem);
+
+
+
+
+

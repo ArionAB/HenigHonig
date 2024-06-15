@@ -1,0 +1,7 @@
+@import "./mixins";
+@import "./variables";
+
+.cardContainer {
+  display: flex;
+  gap: 1rem;
+}

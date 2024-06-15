@@ -1,0 +1,224 @@
+@import "./variables";
+@import "./mixins";
+
+@import "_variables.scss";
+
+.closeModal {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.container {
+  display: flex !important;
+  flex-direction: row;
+  gap: 3rem;
+  padding: 3rem 3rem 3rem 0;
+
+  @media only screen and (max-width: 850px) {
+    flex-direction: column;
+    padding: 3rem 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding-top: 0;
+    gap: 1rem;
+  }
+
+  .images {
+    width: 70%;
+
+    @media only screen and (max-width: 1200px) {
+        width: 50vw;
+        height: 50vw;
+    }
+    @media only screen and (max-width: 850px) {
+        width: 100%;
+        height: 50vw;
+    }
+
+    .image_box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        
+    }
+
+    .thumbImage {
+        cursor: pointer;
+      }
+  }
+
+ 
+
+  .details {
+    width: 100%;
+
+    @media only screen and (max-width: 850px) {
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+    
+
+    .title {
+        font-size: clamp(18px, 3vw, 36px);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: $primary;
+      text-transform: uppercase;
+      // font-family: Brothers;
+      font-family: DaysOne;
+
+      @media only screen and (max-width: 500px) {
+        font-size: 16px;
+      }
+  
+    }
+
+    .price {
+      font-size: 1.5rem;
+    }
+
+    .selectSize {
+      display: flex;
+      gap: 1rem;
+
+      @media only screen and (max-width: 500px) {
+        font-size: 16px;
+      }
+
+      .sizeBTN {
+        background-color: $secondary; 
+        color: $primary;
+        font-weight: 600;
+        padding: 0.3rem 1rem;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: $secondary; 
+          background-color: $primary;
+        }
+      }
+      [data-active="true"] {
+        color: $secondary; 
+        background-color: $primary;
+      }
+    }
+    .error {
+      text-align: center;
+      color: $cancelled;
+    }
+
+    .selectFruits {
+      width: 300px;
+
+      li[data-active="true"] {
+        background-color: $primary !important;
+        color: $secondary !important;
+      }
+
+      margin: 1rem 0;
+    }
+
+    span {
+      color: $primary-light;
+      font-weight: 600;
+    }
+
+    .caption {
+      padding-top: 1rem;
+    }
+
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      height: 40px;
+
+      @media only screen and (max-width: 500px) {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+      }
+
+      .adjust_qty {
+        display: flex;
+        gap: 1rem;
+
+        @media only screen and (max-width: 500px) {
+            width: 100%;
+        }
+      }
+
+      svg {
+        color: $primary;
+        border: 2px solid $secondary;
+        border-radius: 50%;
+        padding: 3px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+
+      .qtyNumber {
+        width: 20px;
+
+        &:focus-within {
+          .notchedOutline {
+            border-color: $primary-light !important;
+          }
+        }
+
+        input {
+          padding-left: 5px;
+        }
+      }
+
+      .selectQuantity {
+        display: flex;
+        margin: 1.5rem 0;
+        width: 40%;
+
+        @media only screen and (max-width: 500px) {
+            width: 100%;
+            
+        }
+      }
+
+      .addCart {
+        width: 60%;
+        margin: 1.5rem 0;
+        background-color: $contrast;
+        color: white;
+
+        &[disabled] {
+          background-color: $disabled-bg-color;
+          color: $disabled-color;
+        }
+
+        @media only screen and (max-width: 500px) {
+            width: 100%;
+           padding: 0.5rem 0;
+           margin: 0.5rem 0;
+        }
+      }
+    }
+
+    .description {
+        font-size: clamp(14px, 16px, 1.1rem);
+      color: $contrast;
+      
+    }
+  }
+}
+
+.categoryTitle {
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: $primary-light;
+  font-style: italic;
+  text-align: center;
+}
+
+// @include divider;

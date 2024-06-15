@@ -1,0 +1,177 @@
+@import "./variables";
+
+@mixin form-input {
+  label {
+    color: $primary;
+    font-weight: 600;
+    width: 100%;
+  }
+
+  input, select{
+    height: 50px;
+    padding: 0.9375rem 1.25rem;
+    font-size: .875rem;
+    line-height: 1.357;
+    border-radius: 10px;
+    border: none;
+    margin-top: 8px;
+    border: 1px solid $primary-light;
+    width: 100%;
+
+    &:focus-within {
+      border: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primary-light;
+    }
+  }
+
+  span {
+    color: $error;
+    font-weight: 400;
+    // font-size: 0.75rem;
+    line-height: 1.66;
+    letter-spacing: 0.03333em;
+    text-align: left;
+    margin-top: 3px;
+    margin-right: 14px;
+    margin-bottom: 0;
+    margin-left: 14px;
+  }
+}
+
+@mixin disabled {
+ MuiButton-root.Mui-disabled {
+   color: rgba(0, 0, 0, 0.26) !important;
+   box-shadow: none !important;
+   background-color: rgba(0, 0, 0, 0.12) !important;
+ }
+}
+
+
+@mixin pink-btn {
+ background-color: $pink;
+ color: $brown;
+
+ &:hover {
+   background-color: $pink !important;
+   color: white;
+ }
+}
+
+@mixin product-title {
+ font-weight: 600;
+ color: $brown;
+ font-style: italic;
+}
+
+@mixin textfield {
+ .textfield {
+   &:focus-within > label {
+     color: $brown;
+     font-weight: 500;
+   }
+   input,
+   ::before {
+     // border-bottom: 1px solid $brown !important;
+     border-bottom-style: solid !important;
+   }
+
+   ::after {
+     border-bottom: 2px solid $brown;
+   }
+
+   fieldset {
+     border-color: rgb(218, 197, 197);
+   }
+
+   input:-webkit-autofill {
+     -webkit-box-shadow: 0 0 0 30px white inset !important;
+   }
+
+   label {
+     @include textfield-label;
+
+     .Mui-focused fieldset {
+       border-color: green;
+     }
+   }
+   .Mui-focused fieldset {
+     border-color: green;
+   }
+ }
+}
+
+
+@mixin textfield-label {
+ font-weight: 400;
+ font-size: 18px;
+ line-height: 27px;
+ color: $gray-subtitle;
+ // background-color: white;
+ padding-right: 5px;
+}
+
+@mixin error-message($text-align: center) {
+ color: #d32f2f;
+ font-weight: 400;
+ font-size: 0.75rem;
+ line-height: 1.66;
+ letter-spacing: 0.03333em;
+ text-align: $text-align;
+ margin-top: 3px;
+ margin-right: 14px;
+ margin-bottom: 0;
+ margin-left: 14px;
+}
+
+@mixin divider {
+ .divider {
+   position: relative;
+   margin-top: 70px;
+   margin-bottom: 70px;
+   height: 1px;
+ }
+
+ .div_transparent:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 5%;
+   right: 5%;
+   width: 90%;
+   height: 1px;
+   background-image: linear-gradient(
+     to right,
+     transparent,
+     #ffd900,
+     transparent
+   );
+ }
+
+ .div_dot:after {
+   display: block;
+   content: "";
+   position: absolute;
+   z-index: 1;
+   top: -23px;
+   left: calc(50% - 9px);
+   content: "\2B22";
+   display: block;
+   color: $brown;
+   font-size: 32px;
+ }
+ .div_dot_two:after {
+   display: block;
+   content: "";
+   position: absolute;
+   z-index: 1;
+   top: -23px;
+   left: calc(50% - 29px);
+   content: "\2B22";
+   display: block;
+   color: #ffd900;
+   font-size: 32px;
+ }
+}

@@ -1,0 +1,185 @@
+@import "./variables.scss";
+
+.options {
+  background-color: white;
+  max-width: 500px;
+  padding: 0.5rem 0;
+  height: 400px;
+  min-width: 500px;
+
+  .title_close {
+    position: relative;
+
+    .title {
+      font-weight: 600;
+      margin: 0 auto;
+      padding: 0 65px 0px 20px;
+      text-align: center;
+      color: $primary;
+      font-size: clamp(20px, 3vw, 32px);
+    }
+
+    .closeBTN {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 4rem;
+
+    .price {
+      font-size: 1.5rem;
+    }
+
+    .info {
+      font-size: 14px;
+      color: $contrast;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .selectSize {
+      display: flex;
+      gap: 1rem;
+
+      .sizeBTN {
+        background-color: $secondary;
+        color: $primary;
+        font-weight: 600;
+        padding: 0.3rem 1rem;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: $secondary;
+          background-color: $primary;
+        }
+      }
+      [data-active="true"] {
+        color: $secondary;
+        background-color: $primary;
+      }
+    }
+
+    .error {
+      text-align: center;
+      color: $cancelled;
+    }
+
+    .selectFruits {
+      width: 300px;
+
+      ul {
+        background-color: #fff;
+        color: rgba(0, 0, 0, 0.87);
+        -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        border-radius: 4px;
+        box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+    }
+
+
+      
+
+      .menuItem {
+        -webkit-tap-highlight-color: transparent;
+        background-color: transparent;
+        outline: 0;
+        border: 0;
+        margin: 0;
+        border-radius: 0;
+        padding: 0;
+        cursor: pointer;
+        color: inherit;
+        font-family: "Roboto","Helvetica","Arial",sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0.00938em;
+        text-decoration: none;
+        min-height: 48px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        box-sizing: border-box;
+        white-space: nowrap;
+        padding-left: 16px;
+        padding-right: 16px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+
+        &:hover {
+          text-decoration: none;
+          background-color: rgba(0, 0, 0, 0.04)
+        }
+      }
+
+      li[data-active="true"] {
+        background-color: $primary !important;
+        color: $secondary !important;
+      }
+
+      margin: 1rem 0;
+    }
+
+    span {
+      color: $primary-light;
+      font-weight: 600;
+    }
+
+    .caption {
+      padding-top: 1rem;
+    }
+
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      height: 40px;
+
+      svg {
+        color: $primary;
+        border: 2px solid $secondary;
+        border-radius: 50%;
+        padding: 3px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+
+      .qtyNumber {
+        width: 20px;
+
+        &:focus-within {
+          .notchedOutline {
+            border-color: $primary-light !important;
+          }
+        }
+
+        input {
+          padding-left: 5px;
+        }
+      }
+
+      .addCart {
+        width: 60%;
+        margin: 1.5rem 0;
+        background-color: $contrast;
+        color: white;
+
+        &[disabled] {
+          color: $disabled-color;
+          background-color: $disabled-bg-color;
+          box-shadow: $disabled-box-shadow;
+        }
+      }
+    }
+
+    .selectWeight {
+      width: 100%;
+    }
+  }
+}
