@@ -6,7 +6,7 @@ import { fruitItems } from "@/Store/Models/SelectItems/fruitItems";
 import { Tables } from "@/Store/Models/Database";
 import { OrderModel } from "@/Store/Models/Order/OrderModel";
 import Image from "next/image";
-import { getImage } from "../../utils/Functions/GetImage";
+import { getImage } from "../../../utils/Functions/GetImage";
 
 
 

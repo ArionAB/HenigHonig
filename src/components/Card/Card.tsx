@@ -17,8 +17,9 @@ import ItemDetails from '../ProductDetailsPage/itemDetails';
 
 const Card: FC<{
     item: Tables<'products'>,
-    index: number
-}> = ({ item, index }) => {
+    index: number,
+    carousel: boolean
+}> = ({ item, index, carousel }) => {
     const [editDialog, setEditDialog] = useState<boolean>(false);
     const [expand, setExpand] = useState<boolean>(true);
     const [containerIndex, setContainerIndex] = useState<number>(0);

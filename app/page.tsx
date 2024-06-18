@@ -1,8 +1,10 @@
 import { cookies } from 'next/headers';
 
-import styles from "@/src/styles/home.module.scss"
+import styles from "@/styles/home.module.scss"
 import { createClient } from '../utils/supabase/server';
 import Card from '@/components/Card/Card';
+import Hero from '@/components/Home/Hero';
+import ProductItems from '@/components/Home/ProductItems';
 
 export default async function index() {
     const cookieStore = cookies();
@@ -13,11 +15,14 @@ export default async function index() {
     if (error) throw error;
 
     return (
-        <div className={styles.cardContainer}>
-            {products?.map((product, index) => (
-                <Card key={product.id} item={product} index={index} />
-
-            ))}
+        <div className={styles.homeContainer}>
+            <Hero />
+            <div className={styles.cardContainer}>
+                <ProductItems productItems={products} />
+                {/* {products?.map((product, index) => (
+                    <Card key={product.id} item={product} index={index} />
+                ))} */}
+            </div>
         </div>
     );
 }

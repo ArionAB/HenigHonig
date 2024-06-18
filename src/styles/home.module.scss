@@ -1,7 +1,14 @@
 @import "./mixins";
 @import "./variables";
 
-.cardContainer {
+.homeContainer {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+
+  .cardContainer {
+    margin-top: 370px;
+    display: flex;
+    gap: 1rem;
+  }
+
 }
