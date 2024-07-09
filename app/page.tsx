@@ -19,9 +19,6 @@ export default async function index() {
             <Hero />
             <div className={styles.cardContainer}>
                 <ProductItems productItems={products} />
-                {/* {products?.map((product, index) => (
-                    <Card key={product.id} item={product} index={index} />
-                ))} */}
             </div>
         </div>
     );

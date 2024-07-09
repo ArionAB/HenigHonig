@@ -17,18 +17,19 @@ export const ProductFilters: FC<{
         }
     };
     const width = usePageWidth();
+    console.log('width', width)
 
     return (
         <div
             className={styles.container}
             aria-hidden={mobile}
-            style={
-                mobile
-                    ? { display: "block" }
-                    : !mobile && width > 900
-                        ? { display: "block" }
-                        : { display: "none !important" }
-            }
+        // style={
+        //     mobile
+        //         ? { display: "block" }
+        //         : !mobile && width > 900
+        //             ? { display: "block" }
+        //             : { display: "none !important" }
+        // }
         >
             {fruitItems.sort((a, b) => {
                 if (a < b) {
@@ -40,10 +41,14 @@ export const ProductFilters: FC<{
                 return 0;
             }).map((item) => {
                 return (
-                    <label className={styles.label} key={item}>
-                        <p>{item}</p>
-                        <input type="checkbox" />
+                    <label className={styles.form_control}>
+                        <input type="checkbox" name="checkbox" data-active="true" />
+                        {item}
                     </label>
+                    // <label className={styles.label} key={item}>
+                    //     <p>{item}</p>
+                    //     <input type="checkbox" className={styles.checkbox} />
+                    // </label>
                     //   <FormControlLabel
                     //     key={item.value}
                     //     className={styles.label}

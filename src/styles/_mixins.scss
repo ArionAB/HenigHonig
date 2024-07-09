@@ -175,3 +175,39 @@
    font-size: 32px;
  }
 }
+
+@mixin checkbox($color: $contrast) {
+  .form_control {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+  
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      appearance: none;
+      background-color: #fff; /* Background color of the checkbox when not checked */
+      border: 2px solid $color; /* Border color of the checkbox */
+      border-radius: 3px; /* Optional: rounded corners */
+      outline: none;
+      cursor: pointer;
+  }
+  
+  /* Checkbox checked state */
+  input[type="checkbox"]:checked {
+      background-color: $color; /* Background color of the checkbox when checked */
+      border-color: $color; /* Border color of the checkbox when checked */
+  }
+  
+  /* Custom checkmark */
+  input[type="checkbox"]:checked::before {
+      content: "\2714"; /* Unicode character for checkmark */
+      display: block;
+      color: white;
+      font-size: 16px;
+      text-align: center;
+      line-height: 20px;
+  }
+  }
+}
